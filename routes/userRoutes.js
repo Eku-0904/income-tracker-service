@@ -24,7 +24,7 @@ const validatePassword = async (req, res, next) => {
         if (isPasswordCorrect) {
             next();
         } else {
-            res.status(404).send("password is incorrect")
+            res.status(400).send("password is incorrect")
         }
     }
     else {

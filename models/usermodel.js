@@ -1,14 +1,13 @@
 const { model, Schema} = require('mongoose');
 
 const UserSchema = new Schema({
-    id: String,
     email: String,
     name: String,
     password: String,
-    avatar_img: String,
+    avatar_img: {type: String, default:""},
     createdAt: {type: Date, default: Date.now()},
-    updatedAt: Date,
-    currency_type: String,
+    updatedAt: {type: Date, default:""},
+    currency_type: {type: String, default:""},
 })
 
 const UserModel = model("User", UserSchema);
